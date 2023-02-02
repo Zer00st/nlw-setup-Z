@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #09090A;
+    color: white;
+
+    height: 100vh;
+  }
+
+  header{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;  /*Esta criando um espaço entre os itens, jogando um pra cada canto da pagina*/
+    gap: 12px; /*gap é outra propriedade que só pode ser utilizada quando o display é flexivel, nesse caso, ela está criando um espaçamento de 12px entre os elementos*/
+
+    padding: 48px; /*Nessa caso como não esta sendo especificado qual lado do preenchimento está sendo afetado ele aplica um distanciamente de 48px a cada lado, top, left, right e bottom*/
+    position: fixed;
+    background-color: #09090A;
+    width: 100%;
+  }
+
+button{
+  padding: 16px 24px; /*Aplicando o distanciamento em altura e largura da escrita no centro*/
+  border-radius: 8px; /*Arredondando a borda e apliando seu raio a 8 pixels*/
+  border: solid #8B5CF6;  /*Exsitem varios tipos de bordas por exemplo, dashed, que faz com que ela fique com traçado ao invez da linha solida*/
+  background-color: transparent; /*Mudando a cor do fundo*/
+  color: white; /*Mudando a cor da escrita*/
+  
+  display: flex; /*O comando flex, faz com que o item fique flexivel a alterações, por exemplo, o display original esta como defalt em inline, o que faz com que fique ao lado do seu irmão, que nesse caso é a imagem*/
+  align-items: center; /*Esse comando só é possível se o display estiver flexivel*/
+
+  font-family: 'Inter'; /*Declaração do nome da fonte, a declaração principal está no arquivo .html*/
+  font-weight: 600; /*O peso da fonte basicamente remete a grossura da fonte, quanto mais grossa, mais pesada, na hora de procurar por ela está especificado o peso na lateral*/
+  font-size: 16px;
+  line-height: 125%;
+}
+
+#form-habits{ /*Variavel declarada como id, fazendo com que o nome dela não possa ser repetido e ganhando maior prioridade na execução*/
+  display: flex;
+
+  /* SE TIVER APENAS 1 VALOR, ELE SERÁ APLICADO AOS 4 LADOS, 2 VALORES = CIMA/BAIXO E LATERAIS, 3 VALORES, O PRIMEIRO SERÁ APLICADO EM CIMA, O SEGUNDO NAS LATERAIS E O TERCEIRO EM BAIXO, E 4 VALORES, CIMA, DIREITA, BAIXO, ESQUERDA, NESSA ORDEM*/
+  padding: 182px 48px 48px; /*Alinhando a lateral dos emojis, o 0 funciona em cima e em baixo, basicamente fazendo com que os 48 pixels somente se aplicam as laterais, se for colocado mais algum ele será aplicado em baixo*/
+  width: fit-content;
+}
+
+.habits {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.habit {
+  width: 64px;
+  height: 64px;
+
+  font-size: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.days { /*Forma de alterar uma classe*/
+  display: flex;
+  gap: 48px;
+  margin-left: 32px;
+}
+
+.day {
+  display: flex;
+  flex-direction: column; /*Faz com que o display flexivel seja no formato de colunas*/
+  gap: 24px;
+}
+
+.day div{
+  margin-bottom: 8px;
+
+  font-family: 'Roboto Mono';
+  font-size: 20px;
+  line-height: 125%;
+
+  color: #A1A1AA;
+
+  text-align: center;
+}
+
+input{
+  appearance: none; /*Em alguns casos é necessário resetar a aparencia para mexer em alguns atributos, como o border-radius por exemplo*/
+  -webkit-appearance: none; /*Esse webkit, é basicamente a mesma coisa que o da linha 40, com a diferença principal que ele é necessário para funcionar em alguns navegadores, como o chrome e safari*/
+
+  width: 64px;
+  height: 64px;
+  border: 2px solid #A78BFA;
+  border-radius: 8px;
+
+  background: #18181B;
+} 
+
+/*Pseudo selector, ou seja, só funcionará quando o necessário para ele funcionar ocorrer, que nesse caso é o caso checked*/
+input:checked {
+  background: #8B5CF6;
+  border: 2px solid #A78BFA;
+}
+
+@media(max-width: 570px){ /*Isso é a forma de criar uma regra dentro do programa, nesse caso, ele esta basicamente fazendo com que a imagem seja alterada dependendo do tamanho da pagina, que no caso é 570px*/
+  button div{
+    display: none;
+  }
+}
