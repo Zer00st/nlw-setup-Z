@@ -34,6 +34,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O Habits é um projeto que ajuda a rastrear hábitos
 
+- [Visite o site online] (https://thomegabi.github.io/nlw-setup-Z)
 
 ## 🔖 Layout
 
